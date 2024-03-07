@@ -1,47 +1,66 @@
-/*Create a calculator using the following functions
-- getSum - adds two numbers
-- getDividend - divides two numbers
-- getProduct - multiplies two numbers
-- getDifference - subtracts two numbers
-- inverseNumber - returns the number as a positive or negative based on input
-- convertPercentageToDecimal - takes in a percentage and returns the number as a decimal
-- getRandomInteger - gets a random integer
-- getPi - returns 3.14
-- getRemainder - returns the remainder if two numbers are divided
-- getSquareRoot - returns the square root of a number
-- Do not show -0
-- Return a helpful message instead of NaN if there is an error
-When done writing the functions, invoke the functions multiple times and use the results to call other functions
-*/
-
 //create a function called calcCalculate
 //the parameter should take in two numbers --not sure which to use (a, b) or (inputOne, inputTwo) - tested
-const calcCalculate = (a, b) => {
+const calcCalculate = (inputOne, inputTwo) => {
   
 }
 
 //Create separate functions outside the calcCalculate function
   //create a function called getSum that adds two numbers
-const getSum = (a, b) => {
-  console.log(a+b);
+const getSum = (inputOne, inputTwo) => {
+  return inputOne + inputTwo;
 }
-
-getSum(4,6);
-
   //create a function called getDividend that divides two numbers
+const getDividend = (inputOne, inputTwo) => {
+  return inputOne / inputTwo;
+}
   //create a function called getProduct that multiples two numbers
+const getProduct = (inputOne, inputTwo) => {
+  return inputOne * inputTwo;
+}
   //create a function called getDifference that subtracts two numbers
-  //create a function called inverseNumber that returns a positive or negative # based on input
-  //create a function called convertPercentageToDecimal that takes in a percentage and returns the number as a decimal
-  //create a function called getRandomInteger that gets a random integer
-  //create a function called getPi that returns 3.14
+const getDifference = (inputOne, inputTwo) => {
+  return inputOne - inputTwo;
+}
   //create a function called getRemainder returns the remainder when two numbers are divided
+const getRemainder = (inputOne, inputTwo) => {
+  return inputOne % inputTwo;
+  //console.log(Math.round(a / b * 100) / 100);
+}
+  //create a function called convertPercentageToDecimal that takes in a percentage and returns the number as a decimal
+const convertPercentageToDecimal = (inputOne, inputTwo) => {
+  return Math.round((inputOne / inputTwo * 100) / 100);
+}
+//Single Inputs
+  //create a function called inverseNumber that returns a positive or negative # based on input
+const inverseNumber = (inputOne) => {
+  if (inputOne === 0){
+    return `Cannot compute, please submit another number.`;
+  } else if (inputOne > 0){
+     return Math.abs(inputOne)*-1;
+  } else {
+    return Math.abs(inputOne);
+  } //very proud of this one
+}
+  //create a function called getRandomInteger that gets a random integer
+const getRandomInteger = (minimum, maximum) => {
+   if (maximum === undefined){
+    maximum = 100;
+   }
+   return Math.floor(Math.random() * (maximum - minimum) + minimum);
+}
+  //create a function called getPi that returns 3.14
+const getPi = (inputOne) => {
+  return Math.PI * (inputOne + inputOne);
+}
   //create a function called getSquareRoot returns square root of a number
+const getSquareRoot = (inputOne) => {
+  return Math.sqrt(inputOne);
+}
 
 calcCalculate(); //calling || invoking the function
 
 
-//like an actual calculator we'll have "buttons"
+//like an actual calculator we'll have "buttons" => HTML
   //each button will be an if statement for the following functions
   // **pause**
 
